@@ -15,6 +15,16 @@ workflows:
       - name: Build iOS
         script: |
           flutter build ios --release --no-codesign
+      - name: Package .app to .ipa
+        script: |
+          mkdir -p build/ios/ipa
+          cd build/ios/iphoneos
+          for app in *.app; do
+            filename="${app%.app}"
+            cd ..
+            xcrun -sdk iphoneos PackageApplication -v "iphoneos/$app" -o "$(pwd)/ipa/$filename.ipa"
+            cd iphoneos
+          done
     artifacts:
       - build/ios/iphoneos/*.app
       - build/ios/ipa/*.ipa
