@@ -1,0 +1,51 @@
+name: rifa_app_new
+description: "Aplicación Flutter para rifa de automóvil"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  intl: ^0.18.1
+  
+  # Iconos estilo iOS
+  cupertino_icons: ^1.0.8
+
+  # Conexión HTTP con el servidor PHP/MySQL
+  http: ^1.2.2
+
+  device_info_plus: ^12.1.0
+
+  # Para manejar estados o reactividad básica (si decides usarlo)
+  provider: ^6.1.2
+
+  # Para mostrar mensajes tipo Snackbar o diálogos
+  fluttertoast: ^9.0.0
+  url_launcher: ^6.3.2
+
+  # generar PDF para boleto de compra
+  pdf: ^3.10.8
+  path_provider: ^2.1.2
+  share_plus: ^12.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/macfara.jpg
+    - assets/fonts/Symbola.ttf
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/macfara.jpg" 
